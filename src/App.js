@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";

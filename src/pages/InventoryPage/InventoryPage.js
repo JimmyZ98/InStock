@@ -1,5 +1,5 @@
 import React from "react";
-import "InventoryPage.scss";
+import "./InventoryPage.scss";
 
 function InventoryPage() {
   return <div>InventoryPage</div>;

@@ -1,5 +1,5 @@
 import React from "react";
-import "WarehousePage.scss";
+import "./WarehousePage.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function WarehousePage() {
