@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
 
 * {
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Titillium Web', sans-serif;
-  color: #13182C;
+  color: $primary-dark;
   margin: 0;
   padding: 0;
 }
