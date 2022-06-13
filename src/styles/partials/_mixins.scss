@@ -1,0 +1,91 @@
+@use "./variables" as *;
+@use "./colors";
+
+//Breakpoints
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+// Type kit
+@mixin page-header {
+  font-size: 1.75rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 2rem;
+  }
+}
+
+@mixin sub-header {
+  font-size: 1.25rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin labels {
+  font-size: 0.8125rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.875rem;
+  }
+}
+
+@mixin table-header {
+  font-size: 0.6875rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.75rem;
+  }
+}
+
+@mixin body-large {
+  font-size: 0.9375rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 1rem;
+  }
+}
+
+@mixin body-medium {
+  font-size: 0.8125rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.875rem;
+  }
+}
+
+@mixin body-small {
+  font-size: 0.6875rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.75rem;
+  }
+}
+
+//padding and margin
+
+@mixin padding-large {
+  padding-bottom: 1.5rem;
+}
+
+@mixin padding-medium {
+  padding-bottom: 1rem;
+}
+
+@mixin padding-small {
+  padding-bottom: 0.25rem;
+}
+
+@mixin margin-large {
+  margin-bottom: 1.5rem;
+}
+
+@mixin margin-medium {
+  margin-bottom: 1rem;
+}
+
+@mixin margin-small {
+  margin-bottom: 0.25rem;
+}
