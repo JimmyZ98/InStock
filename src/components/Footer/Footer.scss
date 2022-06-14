@@ -1,0 +1,20 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/global.scss' as *;
+
+.footer {
+    background-color: $background-light;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__copyright {
+        color: $secondary-dark;
+        font-size: .69rem;
+
+        @include tablet {
+            font-size: .75rem;
+        }
+    }
+}

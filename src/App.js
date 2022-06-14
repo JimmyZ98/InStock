@@ -8,6 +8,7 @@ import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/inventory-add" component={AddInventoryPage} />
           <Route path="/inventory-edit" component={EditInventoryPage} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );
