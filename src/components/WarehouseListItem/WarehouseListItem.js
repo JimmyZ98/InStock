@@ -17,7 +17,7 @@ const WarehouseListItem = ({ id, name, address, city, country, contactName, cont
           </div>
           <div className='warehouse__info-container'>
             <p className='warehouse__sub-header'>ADDRESS</p>
-            <p className='warehouse__info'>{address}, {city}, {country}</p>
+            <p className='warehouse__info warehouse__info--address'>{address}, {city}, {country}</p>
           </div>
         </div>
         <div className='warehouse__grouping'>

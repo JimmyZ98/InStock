@@ -27,6 +27,10 @@ a {
     padding: 1rem 2rem;
   }
 
+  &:hover {
+    background-color: $background-light;
+  }
+
   &:first-child{
     @include tablet {
       border: none;
@@ -47,7 +51,7 @@ a {
 
     @include tablet {
       display: flex;
-      width: fit-content;
+      width: auto;
     }
   }
 
@@ -57,7 +61,6 @@ a {
     @include tablet {
       display: flex;
       align-items: center;
-      width: 55%;
       margin: 0 .5rem 0 0;
     }
   }
@@ -68,6 +71,10 @@ a {
     @include tablet {
       width: 7.5rem;
       margin-right: 1.5rem;
+    }
+
+    @include desktop {
+      width: 11rem;
     }
   }
 
@@ -90,6 +97,16 @@ a {
       margin-right: 1rem;
     }
 
+    @include desktop {
+      margin-right: 2rem;
+    }
+
+    &--address {
+      @include desktop {
+        width: 13rem;
+      }
+    }
+
     &--link {
       color: $primary-color;
       font-weight: 600;
@@ -97,6 +114,12 @@ a {
 
       @include tablet {
         margin-right: 0;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $primary-color;
+        cursor: pointer;
       }
     }
   }
@@ -119,6 +142,7 @@ a {
 
   &__icon {
     height: 1.5rem;
+    cursor: pointer;
 
     @include tablet {
       margin-left: 1rem;
