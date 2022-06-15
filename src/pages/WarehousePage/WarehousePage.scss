@@ -23,16 +23,74 @@ a {
   border-radius: 3px;
   margin: 0 1rem;
 
+  @include tablet {
+    margin: 0 2rem;
+  }
+
+  &__sort-bar {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      background-color: $background-light;
+      padding: .5rem 2rem;
+    }
+  }
+
+  &__sort-info-wrapper {
+    display: flex;
+  }
+
+  &__sort-text-container {
+    display: flex;
+    align-items: center;
+    width: 6.5rem;
+    margin-right: 1.5rem;
+
+    &:first-child {
+      width: 7.5rem;
+      margin-right: 2rem;
+    }
+
+    &:nth-child(4n) {
+     width: 9rem;
+    }
+  }
+
+  &__sort-text {
+    font-size: .75rem;
+    font-weight: 600;
+    color: $secondary-dark;
+    margin-right: .25rem;
+  }
+
+  &__sort-icon {
+    height: .75rem;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
     margin: 2rem 1rem 1rem 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1.5rem 2rem;
+    }
   }
 
   &__title {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
   }
 
   &__search {
@@ -45,6 +103,12 @@ a {
     border: 1px solid $secondary-light;
     border-radius: 20px;
     margin-bottom: 1rem;
+
+    @include tablet {
+      width: 11.5rem;
+      height: 2.4rem;
+      margin-bottom: 0;
+    }
 
     &::placeholder {
       color: $secondary-dark;
@@ -64,6 +128,13 @@ a {
     background-color: $primary-color;
     border: none;
     border-radius: 20px;
+
+    @include tablet {
+      width: auto;
+      height: 2.4rem;
+      padding: 0 1rem;
+      margin-left: 1rem;
+    }
 
     &:hover {
       background-color: $background-dark;

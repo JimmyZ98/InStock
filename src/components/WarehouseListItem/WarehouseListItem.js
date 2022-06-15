@@ -12,7 +12,7 @@ const WarehouseListItem = ({ id, name, address, city, country, contactName, cont
             <p className='warehouse__sub-header'>WAREHOUSE</p>
             <div className='warehouse__link'>
             <p className='warehouse__info warehouse__info--link'>{name}</p>
-            <img className='warehouse__icon' src={chevronRight} alt='link'/>
+            <img className='warehouse__chevron' src={chevronRight} alt='link'/>
             </div>
           </div>
           <div className='warehouse__info-container'>
