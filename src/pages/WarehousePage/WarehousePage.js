@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import "./WarehousePage.scss";
 import WarehouseListItem from '../../components/WarehouseListItem/WarehouseListItem';
 import sortIcon from '../../assets/Icons/sort-24px.svg';
@@ -33,7 +34,9 @@ class WarehousePage extends Component {
             <h1 className='warehouses__title'>Warehouses</h1>
             <div>
               <input className='warehouses__search' placeholder='Search...'/>
-              <button className='warehouses__button'>+Add New Warehouse</button>
+              <Link to={'/warehouse-add'}>
+                <button className='warehouses__button'>+Add New Warehouse</button>
+              </Link>
             </div>
           </div>
           <div className='warehouses__sort-bar'>
