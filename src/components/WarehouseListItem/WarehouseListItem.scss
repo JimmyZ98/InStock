@@ -1,0 +1,155 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Titillium Web', sans-serif;
+  color: $primary-dark;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  all: unset;
+}
+
+.warehouse {
+  list-style: none;
+  padding: 1rem;
+  border-top: 1px solid $secondary-light;
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  &:hover {
+    background-color: $background-light;
+  }
+
+  &:first-child{
+    @include tablet {
+      border: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: initial;
+    }
+  }
+
+  &__grouping {
+    width: 7.5rem;
+
+    @include tablet {
+      display: flex;
+      width: auto;
+    }
+  }
+
+  &__info-container {
+    margin-bottom: 1rem;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      margin: 0 .5rem 0 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+
+    @include tablet {
+      width: 7.5rem;
+      margin-right: 1.5rem;
+    }
+
+    @include desktop {
+      width: 11rem;
+    }
+  }
+
+  &__sub-header {
+    font-size: .7rem;
+    font-weight: 600;
+    color: $secondary-dark;
+    margin-bottom: .25rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__info {
+    font-size: .8rem;
+    
+    @include tablet {
+      width: 6.5rem;
+      margin-right: 1rem;
+    }
+
+    @include desktop {
+      margin-right: 2rem;
+    }
+
+    &--address {
+      @include desktop {
+        width: 13rem;
+      }
+    }
+
+    &--link {
+      color: $primary-color;
+      font-weight: 600;
+      width: auto;
+
+      @include tablet {
+        margin-right: 0;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__chevron {
+    height: 1rem;
+    align-self: flex-end;
+  }
+
+  &__icon-link {
+    display: flex;
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+
+    @include tablet {
+      align-items: center;
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+    cursor: pointer;
+
+    @include tablet {
+      margin-left: 1rem;
+    }
+  }
+}
