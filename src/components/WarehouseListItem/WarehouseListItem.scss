@@ -1,0 +1,62 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Titillium Web', sans-serif;
+  color: $primary-dark;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  all: unset;
+}
+
+.warehouse {
+  list-style: none;
+  padding: 1rem;
+  border-top: 1px solid $secondary-light;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__grouping {
+    width: 7.5rem;
+  }
+
+  &__info-container {
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &__sub-header {
+    font-size: .7rem;
+    font-weight: 600;
+    color: $secondary-dark;
+    margin-bottom: .25rem;
+  }
+
+  &__info {
+    font-size: .8rem;
+
+    &--link {
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+  }
+}
