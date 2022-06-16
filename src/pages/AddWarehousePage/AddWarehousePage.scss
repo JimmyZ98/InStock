@@ -1,0 +1,261 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/global.scss' as *;
+
+.addWarehouse {
+    padding: 1rem;
+    padding-top: 0;
+    background: linear-gradient(
+        to bottom,
+        $background-dark 0%,
+        $background-dark 6%,
+        $background-light 6%,
+        $background-light 100%
+    );
+
+    @include tablet {
+        background: linear-gradient(
+        to bottom,
+        $background-dark 0%,
+        $background-dark 11.6%,
+        $background-light 11.6%,
+        $background-light 100%
+        );
+        padding: 0 1.75rem 12rem 1.75rem;
+    }
+
+    @include desktop {
+        padding: 0 6rem 1rem 6rem;
+        background: linear-gradient(
+        to bottom,
+        $background-dark 0%,
+        $background-dark 14%,
+        $background-light 14%,
+        $background-light 100%
+        );
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(40, 40, 40, 0.2) 0px 1px 4px;
+        border-radius: 3px;
+        background-color: $primary-light;
+    }
+
+    &__title-card {
+        display: flex;
+        padding: 1.5rem;
+
+        @include tablet {
+            padding: 1.5rem 2rem 1rem 2rem;
+        }
+    }
+
+    &__return-link {
+        display: flex;
+    }
+
+    &__return {
+        margin-right: .5rem;
+        width: 1.25rem;
+
+        @include tablet {
+            width: 1.5rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.45rem;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid $secondary-light;
+    }
+
+    &__form-fields {
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            
+        }
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1.5rem .5rem 1.5rem;
+
+        @include tablet {
+            width: 50%;
+            border-right: 1px solid $secondary-light;
+            margin: 1.5rem 0;
+            padding: 0 2rem;
+        }
+
+        &__title {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+
+            @include tablet {
+                font-size: 1.5rem;
+            }
+        }
+
+        &__label {
+            font-weight: 600;
+            font-size: .81rem;
+            margin-bottom: .25rem;
+
+            @include tablet {
+                font-size: .88rem;
+            }
+        }
+
+        &__input {
+            font-size: .81rem;
+            height: 2.25rem;
+            border-radius: 20px;
+            border: 1px solid $secondary-light;
+            padding: 0 1rem;
+            margin-bottom: 1rem;
+
+            &:focus {
+                border: 1px solid $primary-color;
+            }
+
+            @include tablet {
+                font-size: .88rem;
+            }
+
+            @include desktop {
+                margin-bottom: 1.75rem;
+            }
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1.5rem .5rem 1.5rem;
+        
+
+        @include tablet {
+            width: 50%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            margin: .5rem 0;
+        }
+
+        &__title {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+
+            @include tablet {
+                font-size: 1.5rem;
+            }
+        }
+
+        &__label {
+            font-weight: 600;
+            font-size: .81rem;
+            margin-bottom: .25rem;
+
+            @include tablet {
+                font-size: .88rem;
+            }
+        }
+
+        &__input {
+            font-size: .81rem;
+            height: 2.25rem;
+            border-radius: 20px;
+            border: 1px solid $secondary-light;
+            padding: 0 1rem;
+            margin-bottom: 1rem;
+
+            &:focus {
+                border: 1px solid $primary-color;
+            }
+
+            @include tablet {
+                font-size: .88rem;
+            }
+
+            @include desktop {
+                margin-bottom: 1.75rem;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        background-color: $background-light;
+        padding: 1rem 1.5rem;
+        
+        @include tablet {
+            width: 100%;
+            padding: 1rem 2rem;
+            justify-content: flex-end;
+        }
+    }
+
+    &__cancel-link {
+        width: 48%;
+
+        @include tablet {
+            width: auto;
+        }
+    }
+
+    &__cancel {
+        height: 2.25rem;
+        border-radius: 20px;
+        border: 1px solid $secondary-light;
+        background-color: $primary-light;
+        color: $secondary-dark;
+        font-weight: 600;
+        font-size: .81rem;
+        width: 100%;
+
+        &:hover {
+            border: 1px solid $primary-color;
+            color: $primary-color;
+        }
+
+        @include tablet {
+            padding: 0 1rem;
+            font-size: .88rem;
+        }
+    }
+
+    &__add {
+        height: 2.25rem;
+        border-radius: 20px;
+        border: none;
+        background-color: $primary-color;
+        color: $primary-light;
+        font-weight: 600;
+        font-size: .81rem;
+        width: 48%;
+
+        &:hover {
+            background-color: $background-dark;
+        }
+
+        @include tablet {
+            width: auto;
+            padding: 0 1rem;
+            margin-left: 1rem;
+            font-size: .88rem;
+        }
+    }
+}
