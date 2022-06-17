@@ -1,12 +1,15 @@
 import { Component } from "react";
 import "./AddInventoryPage.scss";
 import backArrowIcon from '../../assets/Icons/arrow_back-24px.svg';
+import axios from 'axios';
 
+const server = 'http://localhost:8080';
 class AddInventoryPage extends Component {
 
   state = { 
-    quantityStyle: "new-inventory__quantity-container"
-   } 
+    quantityStyle: "new-inventory__quantity-container",
+    warehouseList: null
+   }
 
    handleStatusChange = (e) => {
     if (e.target.value === "Out of Stock") {
@@ -21,7 +24,30 @@ class AddInventoryPage extends Component {
     };
    };
 
+  populateWarehouseList = () => {
+    let warehouseNames = [];
+    axios.get(`${server}/warehouses`)
+    .then(response => {
+      response.data.map(warehouse => {
+        return warehouseNames.push(warehouse.name)
+      })
+    });
+    this.setState({
+      warehouseList: warehouseNames
+    })
+  };
+
+   componentDidMount = () => {
+    this.populateWarehouseList();
+   };
+   
   render() { 
+
+    const { warehouseList } = this.state;
+
+    if(!warehouseList) {
+      return <main className='loading'>Loading</main>
+    }
 
     return (
       <main className="new-inventory">
@@ -63,6 +89,7 @@ class AddInventoryPage extends Component {
               <label className="new-inventory__label" htmlFor="warehouse">Warehouse</label>
               <select className="new-inventory__select" required id="warehouse">
                 <option value=''>Please select</option>
+                <option value='a value'>{warehouseList}{console.log(warehouseList)}</option>
               </select>
             </div>
           </div>
