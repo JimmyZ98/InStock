@@ -5,8 +5,21 @@ import backArrowIcon from '../../assets/Icons/arrow_back-24px.svg';
 class AddInventoryPage extends Component {
 
   state = { 
-
+    quantityStyle: "new-inventory__quantity-container"
    } 
+
+   handleStatusChange = (e) => {
+    if (e.target.value === "Out of Stock") {
+      this.setState({
+        quantityStyle: "new-inventory__quantity-container new-inventory__quantity-container--display"
+      })
+    }
+    else if (e.target.value === "In Stock") {
+      this.setState({
+        quantityStyle: "new-inventory__quantity-container"
+      })
+    };
+   };
 
   render() { 
 
@@ -35,16 +48,18 @@ class AddInventoryPage extends Component {
               <p className="new-inventory__label">Status</p>
               <div className="new-inventory__radio-container">
                 <div className="new-inventory__radio">
-                  <input className='new-inventory__option' type="radio" id="in_stock" name="status" value="In Stock" checked/>
-                  <label className='new-inventory__radio-text' for="in_stock">In stock</label>
+                  <input className='new-inventory__option' type="radio" id="in_stock" name="status" value="In Stock" defaultChecked onChange={this.handleStatusChange}/>
+                  <label className='new-inventory__radio-text' htmlFor="in_stock">In stock</label>
                 </div>
                 <div className="new-inventory__radio">
-                  <input className='new-inventory__option' type="radio" id="out_of_stock" name="status" value="Out of Stock"/>
-                  <label className='new-inventory__radio-text' for="out_of_stock">Out of stock</label>
+                  <input className='new-inventory__option' type="radio" id="out_of_stock" name="status" value="Out of Stock" onChange={this.handleStatusChange}/>
+                  <label className='new-inventory__radio-text' htmlFor="out_of_stock">Out of stock</label>
                 </div>
               </div>
-              <label className="new-inventory__label" htmlFor="quantity">Quantity</label>
-              <input className="new-inventory__input new-inventory__input--quantity" id="quantity" value='0'/>
+              <div className={this.state.quantityStyle}>
+                <label className="new-inventory__label" htmlFor="quantity">Quantity</label>
+                <input className="new-inventory__input" id="quantity" defaultValue='0'/>
+              </div>
               <label className="new-inventory__label" htmlFor="warehouse">Warehouse</label>
               <select className="new-inventory__select" required id="warehouse">
                 <option value=''>Please select</option>

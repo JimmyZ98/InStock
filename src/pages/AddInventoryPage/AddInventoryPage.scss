@@ -215,6 +215,15 @@
       color: $primary-dark;
     }
 
+    &__quantity-container {
+      display: flex;
+      flex-direction: column;
+
+      &--display {
+        display: none;
+      }
+    }
+
     &__button-container {
       display: flex;
       justify-content: space-between;
