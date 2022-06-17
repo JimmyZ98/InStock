@@ -34,6 +34,10 @@
       @include tablet {
         margin: 0 2rem;
       }
+
+      @include desktop {
+        margin: 0 6rem;
+      }
     }
 
     &__title-container {
@@ -129,11 +133,18 @@
 
       @include tablet {
         height: 2.5rem;
+        margin-bottom: 1.5rem;
       }
 
       &--description {
         height: 7.5rem;
         padding-bottom: 5rem;
+      }
+
+      &--quantity {
+        @include desktop {
+          width: 25%;
+        }
       }
 
       &::placeholder {
@@ -178,6 +189,10 @@
       justify-content: space-between;
       width: 13rem;
       margin-bottom: 1rem;
+
+      @include tablet {
+        margin-bottom: 1.5rem;
+      }
     }
 
     &__radio {

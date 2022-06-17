@@ -44,7 +44,7 @@ class AddInventoryPage extends Component {
                 </div>
               </div>
               <label className="new-inventory__label" htmlFor="quantity">Quantity</label>
-              <input className="new-inventory__input" id="quantity" value='0'/>
+              <input className="new-inventory__input new-inventory__input--quantity" id="quantity" value='0'/>
               <label className="new-inventory__label" htmlFor="warehouse">Warehouse</label>
               <select className="new-inventory__select" required id="warehouse">
                 <option value=''>Please select</option>
