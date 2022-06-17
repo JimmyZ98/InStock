@@ -21,7 +21,7 @@ function App() {
           <Route path="/inventory" component={InventoryPage} />
           <Route path="/inventory/:inventoryId" component={InventoryPage} />
           <Route path="/warehouse-add" component={AddWarehousePage} />
-          <Route path="/warehouse-edit" component={EditWarehousePage} />
+          <Route path="/warehouses/:id" component={EditWarehousePage} />
           <Route path="/inventory-add" component={AddInventoryPage} />
           <Route path="/inventory-edit" component={EditInventoryPage} />
         </Switch>

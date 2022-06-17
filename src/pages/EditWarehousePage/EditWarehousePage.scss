@@ -1,0 +1,195 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors";
+
+.edit-wh {
+  &__outer {
+    background: linear-gradient(
+      to bottom,
+      colors.$background-dark 6%,
+      colors.$background-dark 0%,
+      colors.$background-light 6%,
+      colors.$background-light 100%
+    );
+    @include tablet {
+      background: linear-gradient(
+        to bottom,
+        colors.$background-dark 16.5%,
+        colors.$background-dark 0%,
+        colors.$background-light 6%,
+        colors.$background-light 100%
+      );
+      padding-bottom: 12rem;
+    }
+    @include desktop {
+      background: linear-gradient(
+        to bottom,
+        colors.$background-dark 12%,
+        colors.$background-dark 0%,
+        colors.$background-light 6%,
+        colors.$background-light 100%
+      );
+      padding: 0.2rem 0;
+      padding-bottom: 12rem;
+    }
+  }
+
+  &__inner {
+    background-color: colors.$primary-light;
+    margin: 0 1rem;
+    padding-top: 1.5rem;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+    @include tablet {
+      margin: 0 1.75rem;
+    }
+
+    @include desktop {
+      max-width: 63.75rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    @include padding-sides;
+    @include divider;
+    @include padding-large;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title--text {
+    @include page-header;
+    margin-left: 0.25rem;
+  }
+
+  &__return-link {
+    height: 1.5rem;
+  }
+
+  &__return-link:hover {
+    cursor: pointer;
+  }
+
+  &__form-fields {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__wh-details-outer {
+    @include divider;
+
+    @include tablet {
+      border: none;
+    }
+  }
+
+  &__wh-details {
+    @include divider-right;
+  }
+
+  &__form-block-outer {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__form-block {
+    @include padding-sides;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  &__form-group {
+    @include margin-medium;
+  }
+
+  &__form-title {
+    @include margin-medium-top;
+    @include margin-large;
+    @include sub-header;
+    @include tablet {
+      @include margin-large-top;
+    }
+  }
+
+  &__label {
+    display: block;
+    @include labels;
+    @include margin-small;
+    font-weight: 600;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    @include form-height;
+    padding: 0 1rem;
+    @include body-medium;
+    border: 1px solid colors.$secondary-light;
+  }
+
+  &__form-submit {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  &__save-button {
+    @include form-height;
+    padding: 0 1rem;
+    border-radius: 20px;
+    background-color: colors.$primary-color;
+    color: colors.$primary-light;
+    border: none;
+    width: 100%;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    box-sizing: border-box;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__save-button:hover {
+    background-color: colors.$primary-dark;
+    cursor: pointer;
+  }
+
+  &__cancel {
+    @extend .edit-wh__save-button;
+    color: colors.$secondary-dark;
+    border: solid 1px colors.$secondary-light;
+    background-color: colors.$primary-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    margin-left: 0;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__cancel:hover {
+    color: colors.$primary-color;
+    border: 1px solid colors.$primary-color;
+    background-color: colors.$primary-light;
+    cursor: pointer;
+  }
+
+  &__form-submit {
+    padding: 1rem 1.5rem;
+    background-color: colors.$background-light;
+  }
+}
