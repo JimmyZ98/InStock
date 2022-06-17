@@ -3,28 +3,25 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/mixins' as *;
 
-* {
-  box-sizing: border-box;
-  font-size: 16px;
-  font-family: 'Titillium Web', sans-serif;
-  color: $primary-dark;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  all: unset;
-}
-
 .new-inventory {
   background: linear-gradient(
+    to bottom,
+    $background-dark 0,
+    $background-dark 4rem,
+    $background-light 4rem,
+    $background-light 100%
+  );
+  padding-bottom: .25rem;
+
+    @include tablet {
+      background: linear-gradient(
         to bottom,
         $background-dark 0,
-        $background-dark 4rem,
-        $background-light 4rem,
+        $background-dark 5.5rem,
+        $background-light 5.5rem,
         $background-light 100%
-    );
-    padding-bottom: .25rem;
+      );
+    }
 
     &__container {
       display: flex;
@@ -32,14 +29,21 @@ a {
       background-color: $primary-light;
       box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
       border-radius: 3px;
-
       margin: 0 1rem;
+
+      @include tablet {
+        margin: 0 2rem;
+      }
     }
 
     &__title-container {
       display: flex;
       align-items: flex-start;
       padding: 1.5rem;
+
+      @include tablet {
+        border-bottom: 1px solid $secondary-light;
+      }
     }
 
     &__icon {
@@ -51,6 +55,10 @@ a {
       font-size: 1.75rem;
       font-weight: 600;
       line-height: 36px;
+
+      @include tablet {
+        font-size: 2rem;
+      }
     }
 
     &__form {
@@ -61,8 +69,29 @@ a {
     &__details-container {
       display: flex;
       flex-direction: column;
+
+      @include tablet {
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       padding: 1rem 1.5rem;
       border-top: 1px solid $secondary-light;
+
+      @include tablet {
+        padding: 0 2rem;
+        border-top: none;
+        margin: 1.5rem 0;
+      }
+
+      &:first-child {
+        border-right: 1px solid $secondary-light;
+      }
     }
 
     &__sub-title {
@@ -70,6 +99,11 @@ a {
       font-weight: 600;
       line-height: 28px;
       margin-bottom: 1rem;
+
+      @include tablet {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
     }
 
     &__label {
@@ -77,6 +111,10 @@ a {
       font-weight: 600;
       line-height: 20px;
       margin-bottom: .25rem;
+
+      @include tablet {
+        font-size: .85rem;
+      }
     }
 
     &__input {
@@ -89,6 +127,10 @@ a {
       border-radius: 20px;
       margin-bottom: 1rem;
 
+      @include tablet {
+        height: 2.5rem;
+      }
+
       &--description {
         height: 7.5rem;
         padding-bottom: 5rem;
@@ -96,6 +138,10 @@ a {
 
       &::placeholder {
         color: $secondary-dark;
+
+        @include tablet {
+          font-size: .85rem;
+        }
       }
   
       &:focus {
@@ -116,6 +162,11 @@ a {
       border-radius: 20px;
       margin-bottom: .5rem;
 
+      @include tablet {
+        height: 2.5rem;
+        font-size: .85rem;
+      }
+
       &:focus {
         color: $primary-dark;
         outline: 1px solid $primary-color;
@@ -125,7 +176,7 @@ a {
     &__radio-container {
       display: flex;
       justify-content: space-between;
-      width: 85%;
+      width: 13rem;
       margin-bottom: 1rem;
     }
 
@@ -139,6 +190,10 @@ a {
       line-height: 20px;
       color: $secondary-dark;
       margin-left: .5rem;
+
+      @include tablet {
+        font-size: .85rem;
+      }
     }
 
     &__option:checked + label {
@@ -150,6 +205,10 @@ a {
       justify-content: space-between;
       background-color: $background-light;
       padding: 1rem 1.5rem;
+
+      @include tablet {
+        justify-content: flex-end;
+      }
     }
 
     &__button {
@@ -162,6 +221,13 @@ a {
       border: none;
       border-radius: 20px;
       cursor: pointer;
+
+      @include tablet {
+        width: auto;
+        font-size: .85rem;
+        padding: 0 1rem;
+        margin-left: 1rem;
+      }
 
       &:hover {
         background-color: $background-dark;

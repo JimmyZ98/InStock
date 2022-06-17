@@ -19,35 +19,37 @@ class AddInventoryPage extends Component {
         </div>
         <form className="new-inventory__form">
           <div className="new-inventory__details-container">
-            <h2 className="new-inventory__sub-title">Item Details</h2>
-            <label className="new-inventory__label" htmlFor="name">Item Name</label>
-            <input className="new-inventory__input" id="name" placeholder="Item Name"/>
-            <label className="new-inventory__label" htmlFor="description">Description</label>
-            <input className="new-inventory__input new-inventory__input--description" id="description" placeholder="Please enter a brief item description..."/>
-            <label className="new-inventory__label" htmlFor="category">Category</label>
-            <select className="new-inventory__select" required id="category">
-              <option value=''>Please select</option>
-            </select>
-          </div>
-          <div className="new-inventory__details-container">
-            <h2 className="new-inventory__sub-title">Item Availability</h2>
-            <p className="new-inventory__label">Status</p>
-            <div className="new-inventory__radio-container">
-              <div className="new-inventory__radio">
-                <input className='new-inventory__option' type="radio" id="in_stock" name="status" value="In Stock" checked/>
-                <label className='new-inventory__radio-text' for="in_stock">In stock</label>
-              </div>
-              <div className="new-inventory__radio">
-                <input className='new-inventory__option' type="radio" id="out_of_stock" name="status" value="Out of Stock"/>
-                <label className='new-inventory__radio-text' for="out_of_stock">Out of stock</label>
-              </div>
+            <div className="new-inventory__details">
+              <h2 className="new-inventory__sub-title">Item Details</h2>
+              <label className="new-inventory__label" htmlFor="name">Item Name</label>
+              <input className="new-inventory__input" id="name" placeholder="Item Name"/>
+              <label className="new-inventory__label" htmlFor="description">Description</label>
+              <input className="new-inventory__input new-inventory__input--description" id="description" placeholder="Please enter a brief item description..."/>
+              <label className="new-inventory__label" htmlFor="category">Category</label>
+              <select className="new-inventory__select" required id="category">
+                <option value=''>Please select</option>
+              </select>
             </div>
-            <label className="new-inventory__label" htmlFor="quantity">Quantity</label>
-            <input className="new-inventory__input" id="quantity" value='0'/>
-            <label className="new-inventory__label" htmlFor="warehouse">Warehouse</label>
-            <select className="new-inventory__select" required id="warehouse">
-              <option value=''>Please select</option>
-            </select>
+            <div className="new-inventory__details">
+              <h2 className="new-inventory__sub-title">Item Availability</h2>
+              <p className="new-inventory__label">Status</p>
+              <div className="new-inventory__radio-container">
+                <div className="new-inventory__radio">
+                  <input className='new-inventory__option' type="radio" id="in_stock" name="status" value="In Stock" checked/>
+                  <label className='new-inventory__radio-text' for="in_stock">In stock</label>
+                </div>
+                <div className="new-inventory__radio">
+                  <input className='new-inventory__option' type="radio" id="out_of_stock" name="status" value="Out of Stock"/>
+                  <label className='new-inventory__radio-text' for="out_of_stock">Out of stock</label>
+                </div>
+              </div>
+              <label className="new-inventory__label" htmlFor="quantity">Quantity</label>
+              <input className="new-inventory__input" id="quantity" value='0'/>
+              <label className="new-inventory__label" htmlFor="warehouse">Warehouse</label>
+              <select className="new-inventory__select" required id="warehouse">
+                <option value=''>Please select</option>
+              </select>
+            </div>
           </div>
           <div className="new-inventory__button-container">
             <button className="new-inventory__button new-inventory__button--cancel">Cancel</button>
