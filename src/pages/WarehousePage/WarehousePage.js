@@ -34,7 +34,7 @@ class WarehousePage extends Component {
             <h1 className='warehouses__title'>Warehouses</h1>
             <div>
               <input className='warehouses__search' placeholder='Search...'/>
-              <Link to={'/warehouse-add'}>
+              <Link to={'/warehouse/add'}>
                 <button className='warehouses__button'>+Add New Warehouse</button>
               </Link>
             </div>
