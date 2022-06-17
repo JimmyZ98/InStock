@@ -29,17 +29,17 @@ class AddInventoryPage extends Component {
               <option value=''>Please select</option>
             </select>
           </div>
-          <div className="new-inventory__availability-container">
+          <div className="new-inventory__details-container">
             <h2 className="new-inventory__sub-title">Item Availability</h2>
             <p className="new-inventory__label">Status</p>
             <div className="new-inventory__radio-container">
               <div className="new-inventory__radio">
-                <input type="radio" id="in_stock" name="status" value="In Stock" checked/>
-                <label for="in_stock">In stock</label>
+                <input className='new-inventory__option' type="radio" id="in_stock" name="status" value="In Stock" checked/>
+                <label className='new-inventory__radio-text' for="in_stock">In stock</label>
               </div>
               <div className="new-inventory__radio">
-                <input type="radio" id="out_of_stock" name="status" value="Out of Stock"/>
-                <label for="out_of_stock">Out of stock</label>
+                <input className='new-inventory__option' type="radio" id="out_of_stock" name="status" value="Out of Stock"/>
+                <label className='new-inventory__radio-text' for="out_of_stock">Out of stock</label>
               </div>
             </div>
             <label className="new-inventory__label" htmlFor="quantity">Quantity</label>
@@ -48,10 +48,10 @@ class AddInventoryPage extends Component {
             <select className="new-inventory__select" required id="warehouse">
               <option value=''>Please select</option>
             </select>
-            <div className="new-inventory__button-container">
-              <button className="new-inventory__button new-inventory__button--cancel">Cancel</button>
-              <button className="new-inventory__button">+ Add Item</button>
-            </div>
+          </div>
+          <div className="new-inventory__button-container">
+            <button className="new-inventory__button new-inventory__button--cancel">Cancel</button>
+            <button className="new-inventory__button">+ Add Item</button>
           </div>
         </form>
       </section>
