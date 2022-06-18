@@ -2,6 +2,7 @@ import { Component } from "react";
 import "./AddInventoryPage.scss";
 import backArrowIcon from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const API_URL = 'http://localhost:8080';
 class AddInventoryPage extends Component {
@@ -134,7 +135,9 @@ class AddInventoryPage extends Component {
       <main className="new-inventory">
       <section className="new-inventory__container">
         <div className="new-inventory__title-container">
-          <img className="new-inventory__icon" src={backArrowIcon} alt='back'/>
+          <Link to={'/inventory'}>
+            <img className="new-inventory__icon" src={backArrowIcon} alt='back'/>
+          </Link>
           <h1 className="new-inventory__title">Add New Inventory Item</h1>
         </div>
         <form onSubmit={this.handleSubmit} className="new-inventory__form">
@@ -230,7 +233,9 @@ class AddInventoryPage extends Component {
             </div>
           </div>
           <div className="new-inventory__button-container">
-            <button className="new-inventory__button new-inventory__button--cancel">Cancel</button>
+            <Link to={'/inventory'}>
+              <button className="new-inventory__button new-inventory__button--cancel">Cancel</button>
+            </Link>
             <button type="submit" className="new-inventory__button">+ Add Item</button>
           </div>
         </form>
