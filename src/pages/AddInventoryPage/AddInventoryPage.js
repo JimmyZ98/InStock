@@ -15,8 +15,7 @@ class AddInventoryPage extends Component {
     status: 'In Stock',
     warehouseName: '',
     category: '',
-
-    warehouseID: localStorage.warehouseId || ''
+    warehouseId: ''
    }
 
    handleStatusChange = (e) => {
@@ -37,15 +36,20 @@ class AddInventoryPage extends Component {
    };
 
   populateWarehouseList = () => {
-    let warehouseNames = [];
+    let warehouseData = [];
     axios.get(`${API_URL}/warehouses`)
     .then(response => {
       response.data.map(warehouse => {
-        return warehouseNames.push(warehouse.name)
+        return warehouseData.push(
+          {
+            warehouseName: warehouse.name,
+            warehouseId: warehouse.id
+          }
+        )
       })
     });
     this.setState({
-      warehouseList: warehouseNames
+      warehouseList: warehouseData
     })
   };
 
@@ -71,8 +75,12 @@ class AddInventoryPage extends Component {
   }
 
   handleWarehouseChange = (e) => {
+    let selectedWarehouse = this.state.warehouseList.find(warehouse => {
+      return warehouse.warehouseName === e.target.value
+    })
     this.setState({
-      warehouseName: e.target.value
+      warehouseName: e.target.value,
+      warehouseId: selectedWarehouse.warehouseId
     })
   }
 
@@ -129,6 +137,11 @@ class AddInventoryPage extends Component {
                 onChange={this.handleCategoryChange}
               >
                 <option value=''>Please select</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Gear">Gear</option>
+                <option value="Apparel">Apparel</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Health">Health</option>
               </select>
             </div>
             <div className="new-inventory__details">
@@ -178,10 +191,10 @@ class AddInventoryPage extends Component {
                 {
                   warehouseList.map(warehouse => (
                     <option
-                      key={warehouse}
-                      value={warehouse}
+                      key={warehouse.warehouseId}
+                      value={warehouse.warehouseName}
                     >
-                      {warehouse}
+                      {warehouse.warehouseName}
                     </option>
                   ))
                 }
