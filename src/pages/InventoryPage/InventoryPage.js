@@ -68,7 +68,7 @@ class InventoryPage extends Component {
           </div>
         </div>
         <ul className="inventory__list">
-          {inventoryList?.slice(0, 8).map((inventory) => {
+          {inventoryList?.map((inventory) => {
             return (
               <div className="inventory__item" key={inventory.id}>
                 <div className="inventory__info inventory__info--left">
