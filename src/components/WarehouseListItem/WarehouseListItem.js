@@ -48,6 +48,7 @@ class WarehouseListItem extends Component {
         isOpen={this.state.showModal}
         ariaHideApp={false}
         className="delete-modal"
+        overlayClassName="delete-modal__container"
       >
         <div>
           <div className="delete-modal__icon-container">

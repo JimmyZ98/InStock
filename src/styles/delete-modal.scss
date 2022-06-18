@@ -12,10 +12,30 @@
   background-color: $primary-light;
   padding: 1rem;
 
+  @include tablet {
+    position: relative;
+    top: 12rem;
+    height: fit-content;
+    padding-bottom: 0;
+    margin: 0 2rem;
+  }
+
+  &__container {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba($color: $primary-dark, $alpha: 0.7);
+    display: flex;
+    justify-content: center;
+  }
+
   &__icon-container {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 2rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
   }
 
   &__icon {
@@ -25,6 +45,11 @@
   &__text-container {
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      width: 75%;
+      margin: 0 2rem;
+    }
   }
 
   &__title {
@@ -32,16 +57,31 @@
     font-weight: 600;
     line-height: 36px;
     margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 2rem;
+      line-height: 40px;
+    }
   }
 
   &__text {
     font-size: .9rem;
     line-height: 26px;
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 28px;
+    }
   }
 
   &__button-container {
     display: flex;
     justify-content: space-between;
+
+    @include tablet {
+      justify-content: flex-end;
+      margin: 2rem;
+    }
   }
 
   &__button {
@@ -54,6 +94,11 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
+
+    @include tablet {
+      width: fit-content;
+      padding: 0 1rem;
+    }
 
     &:hover {
       background-color: $background-dark;
