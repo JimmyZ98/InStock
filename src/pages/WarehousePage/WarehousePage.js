@@ -63,7 +63,7 @@ class WarehousePage extends Component {
           <ul className='warehouses__list'>
             {
               warehouseList.map(warehouse => (
-                <WarehouseListItem 
+                <WarehouseListItem
                   key={warehouse.id}
                   {...warehouse}
                 />
