@@ -89,7 +89,13 @@ class AddInventoryPage extends Component {
               <label className="new-inventory__label" htmlFor="warehouse">Warehouse</label>
               <select className="new-inventory__select" required id="warehouse">
                 <option value=''>Please select</option>
-                <option value='a value'>{warehouseList}{console.log(warehouseList)}</option>
+                {
+                  warehouseList.map(warehouse => (
+                    <option key={warehouse} value={warehouse}>
+                      {warehouse}
+                    </option>
+                  ))
+                }
               </select>
             </div>
           </div>
