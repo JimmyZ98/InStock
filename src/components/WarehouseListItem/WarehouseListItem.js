@@ -7,23 +7,39 @@ import chevronRight from "../../assets/Icons/chevron_right-24px.svg";
 import closeIcon from "../../assets/Icons/close-24px.svg"
 import { Component } from "react";
 import Modal from 'react-modal';
+import axios from "axios";
 
 class WarehouseListItem extends Component {
   state = {
     showModal: false
   }
 
-  handleOpenModal() {
+  handleOpenModal = () => {
     this.setState({
       showModal: true
     })
   };
 
-  handleCloseModal() {
+  handleCloseModal = () => {
     this.setState({
       showModal: false
     })
-  }
+  };
+
+  deleteRequest = (id) => {
+    axios.delete(`http://localhost:8080/warehouses/${id}`)
+    .then(response => {
+      console.log(response.data);
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  };
+
+  handleDeleteClick = () => {
+    this.deleteRequest(this.props.id);
+  };
 
   render() {
   return (
@@ -46,7 +62,7 @@ class WarehouseListItem extends Component {
         </div>
         <div className="delete-modal__button-container">
           <button className="delete-modal__button delete-modal__button--cancel" onClick={this.handleCloseModal.bind(this)}>Cancel</button>
-          <button className="delete-modal__button">Delete</button>
+          <button className="delete-modal__button" onClick={this.handleDeleteClick}>Delete</button>
         </div>
       </Modal>
       <div className="warehouse__container">
