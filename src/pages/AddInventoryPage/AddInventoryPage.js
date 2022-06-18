@@ -22,14 +22,14 @@ class AddInventoryPage extends Component {
     if (e.target.value === "Out of Stock") {
       this.setState({
         quantityStyle: "new-inventory__quantity-container new-inventory__quantity-container--display",
-        category: 'Out of Stock',
+        status: 'Out of Stock',
         quantity: 0
       })
     }
     else if (e.target.value === "In Stock") {
       this.setState({
         quantityStyle: "new-inventory__quantity-container",
-        category: 'In Stock',
+        status: 'In Stock',
         quantity: localStorage.quantity
       })
     };
@@ -72,7 +72,7 @@ class AddInventoryPage extends Component {
       quantity: e.target.value
     })
     localStorage.quantity = e.target.value
-  }
+  };
 
   handleWarehouseChange = (e) => {
     let selectedWarehouse = this.state.warehouseList.find(warehouse => {
@@ -82,17 +82,36 @@ class AddInventoryPage extends Component {
       warehouseName: e.target.value,
       warehouseId: selectedWarehouse.warehouseId
     })
-  }
+  };
 
   handleCategoryChange = (e) => {
     this.setState({
       category: e.target.value
     })
-  }
+  };
 
-   componentDidMount = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post(`${API_URL}/inventory`, {
+      warehouseID: this.state.warehouseId,
+      warehouseName: this.state.warehouseName,
+      itemName: this.state.itemName,
+      description: this.state.description,
+      category: this.state.category,
+      status: this.state.status,
+      quantity: this.state.quantity
+    })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(error => {
+      console.error(error)
+    });
+  };
+
+  componentDidMount = () => {
     this.populateWarehouseList();
-   };
+  };
    
   render() { 
 
@@ -109,7 +128,7 @@ class AddInventoryPage extends Component {
           <img className="new-inventory__icon" src={backArrowIcon} alt='back'/>
           <h1 className="new-inventory__title">Add New Inventory Item</h1>
         </div>
-        <form className="new-inventory__form">
+        <form onSubmit={this.handleSubmit} className="new-inventory__form">
           <div className="new-inventory__details-container">
             <div className="new-inventory__details">
               <h2 className="new-inventory__sub-title">Item Details</h2>
@@ -203,7 +222,7 @@ class AddInventoryPage extends Component {
           </div>
           <div className="new-inventory__button-container">
             <button className="new-inventory__button new-inventory__button--cancel">Cancel</button>
-            <button className="new-inventory__button">+ Add Item</button>
+            <button type="submit" className="new-inventory__button">+ Add Item</button>
           </div>
         </form>
       </section>
