@@ -18,15 +18,27 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Redirect from='/' to='/warehouse' exact />
+          <Redirect from="/" to="/warehouse" exact />
           <Route path="/warehouse" exact component={WarehousePage} />
           <Route path="/warehouse/add" component={AddWarehousePage} />
-          <Route path="/warehouse/edit/:warehouseId" component={EditWarehousePage} />
-          <Route path="/warehouse/:warehouseId" component={WarehouseDetailsPage} />
+          <Route
+            path="/warehouse/edit/:warehouseId"
+            component={EditWarehousePage}
+          />
+          <Route
+            path="/warehouse/:warehouseId"
+            component={WarehouseDetailsPage}
+          />
           <Route path="/inventory" exact component={InventoryPage} />
           <Route path="/inventory/add" component={AddInventoryPage} />
-          <Route path="/inventory/edit/:warehouseId" component={EditInventoryPage} />
-          <Route path="/inventory/:inventoryId" component={InventoryDetailsPage} />
+          <Route
+            path="/inventory/edit/:warehouseId"
+            component={EditInventoryPage}
+          />
+          <Route
+            path="/inventory/:inventoryId"
+            component={InventoryDetailsPage}
+          />
         </Switch>
         <Footer />
       </BrowserRouter>
