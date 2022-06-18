@@ -237,7 +237,7 @@ handleSubmit = (e) => {
             </div>
           </div>
           <div className="new-inventory__button-container">
-            <Link to={'/inventory'}>
+            <Link to={'/inventory'} className="new-inventory__button-link">
               <button className="new-inventory__button new-inventory__button--cancel">Cancel</button>
             </Link>
             <button type="submit" className="new-inventory__button">+ Add Item</button>

@@ -235,6 +235,15 @@
       }
     }
 
+    &__button-link {
+      width: 45%;
+      
+      @include tablet {
+        width: fit-content;
+        margin-right: 1rem;
+      }
+    }
+
     &__button {
       width: 45%;
       height: 2.25rem;
@@ -250,7 +259,6 @@
         width: auto;
         font-size: .85rem;
         padding: 0 1rem;
-        margin-left: 1rem;
       }
 
       &:hover {
@@ -258,11 +266,13 @@
       }
 
       &--cancel {
+        width: 100%;
         color: $secondary-dark;
         background-color: $primary-light;
         border: 1px solid $secondary-light;
 
         &:hover {
+          width: fit-content;
           color: $primary-color;
           border-color: $primary-color;
           background-color: $primary-light;
