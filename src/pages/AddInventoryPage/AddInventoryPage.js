@@ -92,21 +92,30 @@ class AddInventoryPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${API_URL}/inventory`, {
-      warehouseID: this.state.warehouseId,
-      warehouseName: this.state.warehouseName,
-      itemName: this.state.itemName,
-      description: this.state.description,
-      category: this.state.category,
-      status: this.state.status,
-      quantity: this.state.quantity
-    })
-    .then(response => {
-      console.log(response)
-    })
-    .catch(error => {
-      console.error(error)
-    });
+    if (!this.state.itemName) {
+      window.alert('Please give an item name!')
+    } else if (!this.state.description) {
+      window.alert('Please give an item description!')
+    } else if (this.state.status === 'In Stock' && this.state.quantity <= 0) {
+      window.alert('Quantity can not be 0 or less for In Stock items!')
+    } else {
+      axios.post(`${API_URL}/inventory`, {
+        warehouseID: this.state.warehouseId,
+        warehouseName: this.state.warehouseName,
+        itemName: this.state.itemName,
+        description: this.state.description,
+        category: this.state.category,
+        status: this.state.status,
+        quantity: this.state.quantity
+      })
+      .then(response => {
+        window.location.assign(`/inventory/${response.data}`);
+        localStorage.clear();
+      })
+      .catch(error => {
+        console.error(error)
+      });
+    }
   };
 
   componentDidMount = () => {
