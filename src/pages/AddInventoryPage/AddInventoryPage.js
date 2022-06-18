@@ -91,15 +91,19 @@ class AddInventoryPage extends Component {
     })
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    if (!this.state.itemName) {
-      window.alert('Please give an item name!')
-    } else if (!this.state.description) {
-      window.alert('Please give an item description!')
-    } else if (this.state.status === 'In Stock' && this.state.quantity <= 0) {
-      window.alert('Quantity can not be 0 or less for In Stock items!')
-    } else {
+handleSubmit = (e) => {
+  e.preventDefault();
+  if (!this.state.itemName) {
+    window.alert('Please give an item name!')
+  } else if (!this.state.description) {
+    window.alert('Please give an item description!')
+  } else if (this.state.status === 'In Stock' && this.state.quantity <= 0) {
+    window.alert('Quantity can not be 0 or less for In Stock items!')
+  } else if (!this.state.category) {
+    window.alert('Please select an item category!')
+  } else if (!this.state.warehouseName) {
+    window.alert('Please select a warehouse!')
+  } else {
       axios.post(`${API_URL}/inventory`, {
         warehouseID: this.state.warehouseId,
         warehouseName: this.state.warehouseName,
