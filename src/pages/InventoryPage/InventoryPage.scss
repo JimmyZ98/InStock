@@ -101,6 +101,10 @@
             font-size: .88rem;
             margin-left: 1rem;
         }
+
+        &:hover {
+            background-color: $background-dark;
+        }
     }
 
     &__sort-headings {
