@@ -1,0 +1,75 @@
+@use './partials/fonts' as *;
+@use './partials/variables' as *;
+@use './partials/colors' as *;
+@use './partials/mixins' as *;
+
+.delete-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: $primary-light;
+  padding: 1rem;
+
+  &__icon-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: .9rem;
+    line-height: 26px;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    width: 50%;
+    height: 2.25rem;
+    color: $primary-light;
+    font-size: .8rem;
+    font-weight: 600;
+    background-color: $supporting-error;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background-dark;
+    }
+
+    &--cancel {
+      color: $secondary-dark;
+      background-color: $primary-light;
+      border: 1px solid $secondary-light;
+      margin-right: 1rem;
+
+      &:hover {
+        color: $primary-color;
+        border-color: $primary-color;
+        background-color: $primary-light;
+      }
+    }
+  }
+}
