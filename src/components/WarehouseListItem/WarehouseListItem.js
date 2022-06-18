@@ -53,7 +53,7 @@ const WarehouseListItem = ({
       </div>
       <div className="warehouse__icon-container">
         <img className="warehouse__icon" src={deleteIcon} alt="delete" />
-        <Link className="warehouse__icon-link" to={`/warehouses/${id}`}>
+        <Link className="warehouse__icon-link" to={`/warehouse/edit/${id}`}>
           <img className="warehouse__icon" src={editIcon} alt="edit" />
         </Link>
       </div>

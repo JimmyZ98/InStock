@@ -47,8 +47,8 @@ function EditWarehousePage() {
       alert("Please enter a valid email address");
       return 0;
     } else {
-      const warehouseID = window.location.pathname;
-      axios.put(`${API_URL}${warehouseID}`, {
+      const warehouseID = window.location.pathname.substring(15);
+      axios.put(`${API_URL}/warehouses${warehouseID}`, {
         name,
         address,
         city,
