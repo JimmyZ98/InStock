@@ -6,6 +6,7 @@ import sort from "../../assets/Icons/sort-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import edit from "../../assets/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import InventoryListItem from "../../components/InventoryListItem/InventoryListItem";
 
 
 const API_URL = "http://localhost:8080";
@@ -30,6 +31,10 @@ class InventoryPage extends Component {
 
   render() {
     const { inventoryList } = this.state;
+
+    if(!inventoryList) {
+      return <main>Loading, please wait...</main>
+    }
 
     return <main className="inventory">
       <div className="inventory__container">
@@ -68,55 +73,14 @@ class InventoryPage extends Component {
           </div>
         </div>
         <ul className="inventory__list">
-          {inventoryList?.map((inventory) => {
-            return (
-              <div className="inventory__item" key={inventory.id}>
-                <div className="inventory__info inventory__info--left">
-                  <div className="inventory__info__item">
-                    <h6 className="inventory__info__heading">INVENTORY ITEM</h6>
-                    <div className="inventory__info__name-container">
-                      <NavLink to={`/inventory/${inventory.id}`} className="inventory__item-link">
-                        <p className="inventory__name">{inventory.itemName}</p>
-                      </NavLink>
-                      <img className="inventory__chevron" src={chevron} alt="chevron" />
-                    </div>
-                  </div>
-                  <div className="inventory__info__category">
-                    <h6 className="inventory__info__heading">CATEGORY</h6>
-                    <p className="inventory__category">{inventory.category}</p>
-                  </div>
-                </div>
-                <div className="inventory__info inventory__info--right">
-                  <div className="inventory__info__status">
-                    <h6 className="inventory__info__heading">STATUS</h6>
-                    <p className=
-                      {
-                        inventory.status === "In Stock"
-                          ?
-                          "inventory__status inventory__status-in"
-                          :
-                          "inventory__status inventory__status-out"
-                      }>{inventory.status.toUpperCase()}
-                    </p>
-                  </div>
-                  <div className="inventory__info__quantity">
-                    <h6 className="inventory__info__heading">QTY</h6>
-                    <p className="inventory__quantity">{inventory.quantity}</p>
-                  </div>
-                  <div className="inventory__info__warehouse">
-                    <h6 className="inventory__info__heading">WAREHOUSE</h6>
-                    <p className="inventory__warehouse">{inventory.warehouseName}</p>
-                  </div>
-                </div>
-                <div className="inventory__actions">
-                  <img className="inventory__delete" src={deleteIcon} alt="delete" />
-                  <NavLink to={`/inventory/edit/${inventory.id}`} className="inventory__edit-link">
-                    <img className="inventory__edit" src={edit} alt="edit" />
-                  </NavLink>
-                </div>
-              </div>
-            )
-          })}
+          {
+            inventoryList.map(item => (
+              <InventoryListItem
+                key={item.id}
+                {...item}
+              />
+            ))
+          }
         </ul>
       </div>
     </main>;
