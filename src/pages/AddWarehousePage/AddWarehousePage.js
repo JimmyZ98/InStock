@@ -55,8 +55,7 @@ function AddWarehousePage() {
           email
         }
       })
-      window.history.go(-1);
-      document.location.reload(true);
+      window.location.assign(`/warehouse`);
     }
 
   };

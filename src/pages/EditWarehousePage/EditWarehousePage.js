@@ -60,6 +60,7 @@ function EditWarehousePage() {
           email,
         },
       });
+      window.location.assign(`/warehouse`);
     }
   };
 
@@ -100,7 +101,6 @@ function EditWarehousePage() {
                   </label>
                   <input
                     className="edit-wh__input"
-                    id="address"
                     name="address"
                     type="text"
                     placeholder="Street Address"
@@ -180,7 +180,7 @@ function EditWarehousePage() {
                     id="email"
                     name="email"
                     type="text"
-                    placeholder="email"
+                    placeholder="Email"
                   />
                 </div>
               </div>

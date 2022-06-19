@@ -279,4 +279,13 @@
       }
     }
   }
+
+  &__cancel-link {
+    width: 45%;
+
+    @include tablet {
+      width: auto;
+      margin-right: 1rem;
+    }
+  }
 }

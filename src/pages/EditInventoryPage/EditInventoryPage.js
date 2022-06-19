@@ -112,7 +112,7 @@ class EditInventoryPage extends Component {
           quantity: this.state.quantity,
         })
         .then((response) => {
-          window.location.assign(`/inventory/${response.data}`);
+          window.location.assign(`/inventory/`);
           localStorage.clear();
         })
         .catch((error) => {
@@ -254,7 +254,7 @@ class EditInventoryPage extends Component {
               </div>
             </div>
             <div className="edit-inv__button-container">
-              <Link to={"/inventory"}>
+              <Link to={"/inventory"} className="edit-inv__cancel-link">
                 <button className="edit-inv__button edit-inv__button--cancel">
                   Cancel
                 </button>

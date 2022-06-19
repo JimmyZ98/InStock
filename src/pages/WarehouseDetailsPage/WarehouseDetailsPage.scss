@@ -64,6 +64,7 @@
     &__return {
         width: 1.5rem;
         margin-right: .5rem;
+        cursor: pointer;
     }
 
     &__title {
@@ -89,6 +90,7 @@
         font-size: .81rem;
         font-weight: 600;
         padding: .4rem;
+        cursor: pointer;
 
         @include tablet {
             width: auto;

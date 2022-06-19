@@ -84,6 +84,10 @@
             font-size: .88rem;
             margin: 0;
         }
+
+        &:focus {
+          outline: 1px solid $primary-color;
+        }
     }
 
     &__add {
@@ -95,6 +99,7 @@
         border-radius: 20px;
         font-size: .81rem;
         font-weight: 600;
+        cursor: pointer;
 
         @include tablet {
             width: 8rem;
@@ -255,6 +260,7 @@
         font-size: .81rem;
         color: $primary-color;
         font-weight: 600;
+        cursor: pointer;
 
         &:hover {
             text-decoration: underline;

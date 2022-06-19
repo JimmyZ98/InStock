@@ -408,6 +408,7 @@
     }
 
     &__delete {
+      cursor: pointer;
         @include tablet {
             width: 1.75rem;
         }
@@ -420,6 +421,7 @@
     }
 
     &__edit {
+      cursor: pointer;
         @include tablet {
             margin-left: 1rem;
         }
