@@ -281,6 +281,11 @@
   }
 
   &__cancel-link {
-    margin-right: 1rem;
+    width: 45%;
+
+    @include tablet {
+      width: auto;
+      margin-right: 1rem;
+    }
   }
 }
