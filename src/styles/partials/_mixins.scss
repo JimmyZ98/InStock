@@ -1,0 +1,145 @@
+@use "./variables" as *;
+@use "./colors";
+
+//Breakpoints
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+// Type kit
+@mixin page-header {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@mixin sub-header {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@mixin labels {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+@mixin table-header {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+@mixin body-large {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
+
+@mixin body-medium {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+@mixin body-small {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+  color: colors.$secondary-dark;
+  @media (min-width: $tablet-breakpoint) {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+//padding and margin
+
+@mixin padding-large {
+  padding-bottom: 1.5rem;
+}
+
+@mixin padding-medium {
+  padding-bottom: 1rem;
+}
+
+@mixin padding-small {
+  padding-bottom: 0.25rem;
+}
+
+@mixin margin-large {
+  margin-bottom: 1.5rem;
+}
+
+@mixin margin-medium {
+  margin-bottom: 1rem;
+}
+
+@mixin margin-small {
+  margin-bottom: 0.25rem;
+}
+
+@mixin margin-large-top {
+  margin-top: 1.5rem;
+}
+
+@mixin margin-medium-top {
+  margin-top: 1rem;
+}
+
+@mixin margin-small-top {
+  margin-top: 0.25rem;
+}
+
+@mixin padding-sides {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  @media (min-width: $tablet-breakpoint) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+//form heights
+@mixin form-height {
+  height: 2.25rem;
+  @media (min-width: $tablet-breakpoint) {
+    height: 2.375rem;
+  }
+}
+
+//divider
+@mixin divider {
+  border-bottom: solid 1px colors.$secondary-light;
+}
+
+@mixin divider-right {
+  border-right: solid 1px colors.$secondary-light;
+}

@@ -1,0 +1,291 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.edit-inv {
+  background: linear-gradient(
+    to bottom,
+    $background-dark 0,
+    $background-dark 4rem,
+    $background-light 4rem,
+    $background-light 100%
+  );
+  padding-bottom: 0.25rem;
+
+  @include tablet {
+    background: linear-gradient(
+      to bottom,
+      $background-dark 0,
+      $background-dark 5.5rem,
+      $background-light 5.5rem,
+      $background-light 100%
+    );
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-light;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    margin: 0 1rem;
+
+    @include tablet {
+      margin: 0 2rem;
+    }
+
+    @include desktop {
+      margin: 0 6rem;
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem;
+
+    @include tablet {
+      border-bottom: 1px solid $secondary-light;
+    }
+  }
+
+  &__icon {
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 36px;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__details-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid $secondary-light;
+
+    @include tablet {
+      padding: 0 2rem;
+      border-top: none;
+      margin: 1.5rem 0;
+    }
+
+    &:first-child {
+      border-right: 1px solid $secondary-light;
+    }
+  }
+
+  &__sub-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 0.25rem;
+
+    @include tablet {
+      font-size: 0.85rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 2.25rem;
+    font-size: 0.8rem;
+    color: $primary-dark;
+    padding: 0 1rem;
+    border: 1px solid $secondary-light;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      height: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &--description {
+      height: 7.5rem;
+      padding-bottom: 5rem;
+    }
+
+    &--quantity {
+      @include desktop {
+        width: 25%;
+      }
+    }
+
+    &::placeholder {
+      color: $secondary-dark;
+
+      @include tablet {
+        font-size: 0.85rem;
+      }
+    }
+
+    &:focus {
+      outline: 1px solid $primary-color;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    height: 2.25rem;
+    appearance: none;
+    background: url(../../assets/Icons/arrow_drop_down-24px.svg) no-repeat;
+    background-position: center right 1rem;
+    font-size: 0.8rem;
+    color: $secondary-dark;
+    padding: 0 1rem;
+    border: 1px solid $secondary-light;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      height: 2.5rem;
+      font-size: 0.85rem;
+    }
+
+    &:focus {
+      color: $primary-dark;
+      outline: 1px solid $primary-color;
+    }
+  }
+
+  &__radio-container {
+    display: flex;
+    justify-content: space-between;
+    width: 13rem;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__radio {
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-text {
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: $secondary-dark;
+    margin-left: 0.5rem;
+
+    @include tablet {
+      font-size: 0.85rem;
+    }
+  }
+
+  &__option:checked + label {
+    color: $primary-dark;
+  }
+
+  &__quantity-container {
+    display: flex;
+    flex-direction: column;
+
+    &--display {
+      display: none;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: $background-light;
+    padding: 1rem 1.5rem;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__button-link {
+    width: 45%;
+
+    @include tablet {
+      width: fit-content;
+      margin-right: 1rem;
+    }
+  }
+
+  &__button {
+    width: 45%;
+    height: 2.25rem;
+    color: $primary-light;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    @include tablet {
+      width: auto;
+      font-size: 0.85rem;
+      padding: 0 1rem;
+    }
+
+    &:hover {
+      background-color: $background-dark;
+    }
+
+    &--cancel {
+      width: 100%;
+      color: $secondary-dark;
+      background-color: $primary-light;
+      border: 1px solid $secondary-light;
+
+      &:hover {
+        width: fit-content;
+        color: $primary-color;
+        border-color: $primary-color;
+        background-color: $primary-light;
+      }
+    }
+  }
+
+  &__cancel-link {
+    width: 45%;
+
+    @include tablet {
+      width: auto;
+      margin-right: 1rem;
+    }
+  }
+}

@@ -1,0 +1,216 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.inv-details {
+  background: linear-gradient(
+    to bottom,
+    $background-dark 0,
+    $background-dark 4rem,
+    $background-light 4rem,
+    $background-light 100%
+  );
+  padding-bottom: 3rem;
+
+  @include tablet {
+    background: linear-gradient(
+      to bottom,
+      $background-dark 0,
+      $background-dark 5.5rem,
+      $background-light 5.5rem,
+      $background-light 100%
+    );
+    padding-bottom: 12rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-light;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    margin: 0 1rem;
+
+    @include tablet {
+      margin: 0 2rem;
+    }
+
+    @include desktop {
+      margin: 0 6rem;
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 1px solid $secondary-light;
+  }
+
+  &__title-container-left {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 36px;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+
+  &__edit {
+    background-color: $primary-color;
+    border: none;
+    color: $primary-light;
+    height: 2.25rem;
+    border-radius: 20px;
+    font-weight: 600;
+    padding: 0.4rem;
+    @include body-medium;
+    @include tablet {
+      width: auto;
+      margin-left: 1rem;
+      display: flex;
+      padding: 1rem;
+      align-items: center;
+      height: 2.375rem;
+    }
+    &:hover {
+      background-color: $background-dark;
+      cursor: pointer;
+    }
+  }
+
+  &__edit-icon {
+    filter: brightness(0) invert(1);
+    @include tablet {
+      width: 1.25rem;
+      margin-right: 0.25rem;
+    }
+  }
+
+  &__edit-text {
+    display: none;
+
+    @include tablet {
+      display: contents;
+      color: $primary-light;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+  }
+
+  &__body-container {
+    margin-top: 1rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    @include tablet {
+      width: 50%;
+      box-sizing: border-box;
+      padding-right: 1rem;
+      margin-bottom: 1.5rem;
+      @include divider-right;
+    }
+  }
+
+  &__right {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__details-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1.5rem;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      padding: 0 2rem;
+      margin: 1.5rem 0;
+    }
+  }
+
+  &__sub-heading {
+    @include body-small;
+    @include margin-small;
+  }
+
+  &__text {
+    @include body-medium;
+  }
+
+  &__status-quantity {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  &__status-container {
+    padding-right: 0;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__quantity-container {
+    padding-right: 0;
+    padding-left: 2rem;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__category {
+    margin-bottom: 0.25rem;
+  }
+
+  &__status {
+    @include labels;
+    font-weight: 600;
+    width: fit-content;
+    height: 1.5rem;
+    padding: 0 0.5rem;
+    border-radius: 20px;
+
+    @include tablet {
+      font-size: 0.85rem;
+    }
+  }
+
+  &__status-in {
+    background-color: rgba(21, 132, 99, 0.07);
+    color: $supporting-good;
+  }
+
+  &__status-out {
+    background-color: rgba(201, 69, 21, 0.07);
+    color: $supporting-error;
+  }
+}
