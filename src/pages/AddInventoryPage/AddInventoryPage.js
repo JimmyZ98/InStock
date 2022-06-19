@@ -81,7 +81,7 @@ class AddInventoryPage extends Component {
     })
     this.setState({
       warehouseName: e.target.value,
-      warehouseId: selectedWarehouse.warehouseId
+      warehouseId: selectedWarehouse?.warehouseId
     })
   };
 

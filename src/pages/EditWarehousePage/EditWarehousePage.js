@@ -60,6 +60,7 @@ function EditWarehousePage() {
           email,
         },
       });
+      window.location.assign(`/warehouse`);
     }
   };
 

@@ -112,7 +112,7 @@ class EditInventoryPage extends Component {
           quantity: this.state.quantity,
         })
         .then((response) => {
-          window.location.assign(`/inventory/${response.data}`);
+          window.location.assign(`/inventory/`);
           localStorage.clear();
         })
         .catch((error) => {
