@@ -17,12 +17,11 @@ class InventoryDetailsPage extends Component {
       .get(`${API_URL}/inventory/${this.props.match.params.inventoryId}`)
       .then((res) => {
         this.setState({ inventoryDetails: res.data });
-        console.log(res.data);
       });
   }
 
   render() {
-    console.log("render");
+
     const { inventoryDetails } = this.state;
 
     return (
@@ -83,7 +82,7 @@ class InventoryDetailsPage extends Component {
                         : "inv-details__status inv-details__status-out"
                     }
                   >
-                    {inventoryDetails?.status.toUpperCase()}
+                    {inventoryDetails?.status}
                   </p>
                 </div>
                 <div className="inv-details__details inv-details__quantity-container">

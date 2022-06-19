@@ -26,10 +26,10 @@ class WarehouseDetailsPage extends Component {
         })
       })
     axios
-      .get(`${API_URL}/inventory`)
+      .get(`${API_URL}/inventory/warehouse/${this.props.match.params.warehouseId}`)
       .then((response) => {
         this.setState({
-          inventoryList: response.data.filter((inventory) => inventory.warehouseID === this.props.match.params.warehouseId)
+          inventoryList: response.data
         })
       })
   }
