@@ -5,8 +5,6 @@ import WarehouseListItem from "../../components/WarehouseListItem/WarehouseListI
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 class WarehousePage extends Component {
   state = {
     warehouseList: null,

@@ -7,8 +7,6 @@ import edit from "../../assets/Icons/edit-24px.svg";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import DetailsListItem from "../../components/DetailsListItem/DetailsListItem";
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 class WarehouseDetailsPage extends Component {
   state = {
     warehouseDetails: null,
@@ -17,7 +15,9 @@ class WarehouseDetailsPage extends Component {
 
   componentDidMount() {
     axios
-      .get(`${API_URL}warehouses/${this.props.match.params.warehouseId}`)
+      .get(
+        `https://apps-server-instock.herokuapp.com/warehouses/${this.props.match.params.warehouseId}`
+      )
       .then((response) => {
         this.setState({
           warehouseDetails: response.data,
@@ -25,7 +25,7 @@ class WarehouseDetailsPage extends Component {
       });
     axios
       .get(
-        `${API_URL}inventory/warehouse/${this.props.match.params.warehouseId}`
+        `https://apps-server-instock.herokuapp.com/inventory/warehouse/${this.props.match.params.warehouseId}`
       )
       .then((response) => {
         this.setState({

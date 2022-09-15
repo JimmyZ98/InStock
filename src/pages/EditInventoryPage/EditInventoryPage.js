@@ -4,7 +4,6 @@ import backArrowIcon from "../../assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const API_URL = process.env.REACT_APP_API_URL;
 class EditInventoryPage extends Component {
   state = {
     quantityStyle: "edit-inv__quantity-container",
@@ -37,14 +36,16 @@ class EditInventoryPage extends Component {
 
   populateWarehouseList = () => {
     let warehouseData = [];
-    axios.get(`${API_URL}warehouses`).then((response) => {
-      response.data.map((warehouse) => {
-        return warehouseData.push({
-          warehouseName: warehouse.name,
-          warehouseId: warehouse.id,
+    axios
+      .get(`https://apps-server-instock.herokuapp.com/warehouses`)
+      .then((response) => {
+        response.data.map((warehouse) => {
+          return warehouseData.push({
+            warehouseName: warehouse.name,
+            warehouseId: warehouse.id,
+          });
         });
       });
-    });
     this.setState({
       warehouseList: warehouseData,
     });
@@ -102,15 +103,18 @@ class EditInventoryPage extends Component {
     } else {
       const inventoryID = window.location.pathname.substring(15);
       axios
-        .put(`${API_URL}inventory${inventoryID}`, {
-          warehouseID: this.state.warehouseId,
-          warehouseName: this.state.warehouseName,
-          itemName: this.state.itemName,
-          description: this.state.description,
-          category: this.state.category,
-          status: this.state.status,
-          quantity: this.state.quantity,
-        })
+        .put(
+          `https://apps-server-instock.herokuapp.com/inventory${inventoryID}`,
+          {
+            warehouseID: this.state.warehouseId,
+            warehouseName: this.state.warehouseName,
+            itemName: this.state.itemName,
+            description: this.state.description,
+            category: this.state.category,
+            status: this.state.status,
+            quantity: this.state.quantity,
+          }
+        )
         .then((response) => {
           window.location.assign(`/inventory/`);
           localStorage.clear();

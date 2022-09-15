@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import icon from "../../assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 const regexPhone = new RegExp(
   /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
   "im"
@@ -48,18 +46,21 @@ function EditWarehousePage() {
       return 0;
     } else {
       const warehouseID = window.location.pathname.substring(15);
-      axios.put(`${API_URL}warehouses${warehouseID}`, {
-        name,
-        address,
-        city,
-        country,
-        contact: {
-          name: contactName,
-          position,
-          phone,
-          email,
-        },
-      });
+      axios.put(
+        `https://apps-server-instock.herokuapp.com/warehouses${warehouseID}`,
+        {
+          name,
+          address,
+          city,
+          country,
+          contact: {
+            name: contactName,
+            position,
+            phone,
+            email,
+          },
+        }
+      );
       window.location.assign(`/warehouse`);
     }
   };

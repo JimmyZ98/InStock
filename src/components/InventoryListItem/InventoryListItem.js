@@ -7,7 +7,6 @@ import edit from "../../assets/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import closeIcon from "../../assets/Icons/close-24px.svg";
 import Modal from "react-modal";
-const API_URL = process.env.REACT_APP_API_URL;
 
 class InventoryListItem extends Component {
   state = {
@@ -28,7 +27,7 @@ class InventoryListItem extends Component {
 
   deleteRequest = (id) => {
     axios
-      .delete(`${API_URL}inventory/${id}`)
+      .delete(`https://apps-server-instock.herokuapp.com/inventory/${id}`)
       .then((response) => {
         console.log(response.data);
         window.location.reload();

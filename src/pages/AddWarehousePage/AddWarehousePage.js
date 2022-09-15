@@ -5,8 +5,6 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 const { v4: uuid } = require("uuid");
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 const regexPhone = new RegExp(
   /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
   "im"
@@ -49,7 +47,7 @@ function AddWarehousePage() {
       alert("Please enter a valid email address");
       return 0;
     } else {
-      axios.post(`${API_URL}warehouses`, {
+      axios.post(`https://apps-server-instock.herokuapp.com/warehouses`, {
         id,
         name,
         address,

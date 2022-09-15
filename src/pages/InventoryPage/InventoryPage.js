@@ -8,19 +8,19 @@ import edit from "../../assets/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import InventoryListItem from "../../components/InventoryListItem/InventoryListItem";
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 class InventoryPage extends Component {
   state = {
     inventoryList: null,
   };
 
   componentDidMount() {
-    axios.get(`${API_URL}inventory`).then((response) => {
-      this.setState({
-        inventoryList: response.data,
+    axios
+      .get(`https://apps-server-instock.herokuapp.com/inventory`)
+      .then((response) => {
+        this.setState({
+          inventoryList: response.data,
+        });
       });
-    });
   }
 
   render() {

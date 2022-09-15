@@ -4,7 +4,6 @@ import backArrowIcon from "../../assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const API_URL = process.env.REACT_APP_API_URL;
 class AddInventoryPage extends Component {
   state = {
     quantityStyle: "new-inventory__quantity-container",
@@ -37,14 +36,16 @@ class AddInventoryPage extends Component {
 
   populateWarehouseList = () => {
     let warehouseData = [];
-    axios.get(`${API_URL}warehouses`).then((response) => {
-      response.data.map((warehouse) => {
-        return warehouseData.push({
-          warehouseName: warehouse.name,
-          warehouseId: warehouse.id,
+    axios
+      .get(`https://apps-server-instock.herokuapp.com/warehouses`)
+      .then((response) => {
+        response.data.map((warehouse) => {
+          return warehouseData.push({
+            warehouseName: warehouse.name,
+            warehouseId: warehouse.id,
+          });
         });
       });
-    });
     this.setState({
       warehouseList: warehouseData,
     });
@@ -101,7 +102,7 @@ class AddInventoryPage extends Component {
       window.alert("Please select a warehouse!");
     } else {
       axios
-        .post(`${API_URL}inventory`, {
+        .post(`https://apps-server-instock.herokuapp.com/inventory`, {
           warehouseID: this.state.warehouseId,
           warehouseName: this.state.warehouseName,
           itemName: this.state.itemName,

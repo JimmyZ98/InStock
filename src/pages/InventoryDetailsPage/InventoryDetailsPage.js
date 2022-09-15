@@ -5,8 +5,6 @@ import backArrowIcon from "../../assets/Icons/arrow_back-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import { Link } from "react-router-dom";
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 class InventoryDetailsPage extends Component {
   state = {
     invetoryDetails: null,
@@ -14,7 +12,9 @@ class InventoryDetailsPage extends Component {
 
   componentDidMount() {
     axios
-      .get(`${API_URL}inventory/${this.props.match.params.inventoryId}`)
+      .get(
+        `https://apps-server-instock.herokuapp.com/inventory/${this.props.match.params.inventoryId}`
+      )
       .then((res) => {
         this.setState({ inventoryDetails: res.data });
       });

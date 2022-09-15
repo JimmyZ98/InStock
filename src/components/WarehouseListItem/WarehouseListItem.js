@@ -8,7 +8,6 @@ import closeIcon from "../../assets/Icons/close-24px.svg";
 import { Component } from "react";
 import Modal from "react-modal";
 import axios from "axios";
-const API_URL = process.env.REACT_APP_API_URL;
 
 class WarehouseListItem extends Component {
   state = {
@@ -29,7 +28,7 @@ class WarehouseListItem extends Component {
 
   deleteRequest = (id) => {
     axios
-      .delete(`${API_URL}warehouses/${id}`)
+      .delete(`https://apps-server-instock.herokuapp.com/warehouses/${id}`)
       .then((response) => {
         console.log(response.data);
         window.location.reload();
