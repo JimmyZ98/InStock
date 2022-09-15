@@ -13,11 +13,13 @@ class WarehousePage extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${API_URL}warehouses`).then((response) => {
-      this.setState({
-        warehouseList: response.data,
+    axios
+      .get(`https://apps-server-instock.herokuapp.com/warehouses`)
+      .then((response) => {
+        this.setState({
+          warehouseList: response.data,
+        });
       });
-    });
   }
 
   render() {
