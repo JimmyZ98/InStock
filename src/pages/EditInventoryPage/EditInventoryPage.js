@@ -4,7 +4,7 @@ import backArrowIcon from "../../assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const API_URL = "http://localhost:8080";
+const API_URL = process.env.REACT_APP_API_URL;
 class EditInventoryPage extends Component {
   state = {
     quantityStyle: "edit-inv__quantity-container",
@@ -37,7 +37,7 @@ class EditInventoryPage extends Component {
 
   populateWarehouseList = () => {
     let warehouseData = [];
-    axios.get(`${API_URL}/warehouses`).then((response) => {
+    axios.get(`${API_URL}warehouses`).then((response) => {
       response.data.map((warehouse) => {
         return warehouseData.push({
           warehouseName: warehouse.name,
@@ -102,7 +102,7 @@ class EditInventoryPage extends Component {
     } else {
       const inventoryID = window.location.pathname.substring(15);
       axios
-        .put(`${API_URL}/inventory${inventoryID}`, {
+        .put(`${API_URL}inventory${inventoryID}`, {
           warehouseID: this.state.warehouseId,
           warehouseName: this.state.warehouseName,
           itemName: this.state.itemName,

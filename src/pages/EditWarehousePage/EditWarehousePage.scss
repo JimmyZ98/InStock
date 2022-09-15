@@ -18,7 +18,7 @@
         colors.$background-light 6%,
         colors.$background-light 100%
       );
-      padding-bottom: 12rem;
+      padding-bottom: 42vh;
     }
     @include desktop {
       background: linear-gradient(
@@ -29,7 +29,7 @@
         colors.$background-light 100%
       );
       padding: 0.2rem 0;
-      padding-bottom: 12rem;
+      padding-bottom: 42vh;
     }
   }
 

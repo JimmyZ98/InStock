@@ -11,7 +11,7 @@
     $background-light 4rem,
     $background-light 100%
   );
-  padding-bottom: 3rem;
+  padding-bottom: 65vh;
 
   @include tablet {
     background: linear-gradient(
@@ -21,7 +21,7 @@
       $background-light 5.5rem,
       $background-light 100%
     );
-    padding-bottom: 12rem;
+    padding-bottom: 65vh;
   }
   &__container {
     display: flex;
